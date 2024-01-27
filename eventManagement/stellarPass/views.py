@@ -18,3 +18,4 @@ def showsEvents(request):
 
 def tickets(request):
     return render(request,'stellarPass/tickets.html');
+

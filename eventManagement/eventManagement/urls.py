@@ -21,11 +21,12 @@ from stellarPass.views import index,about,rentVenue,showsEvents,tickets
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('',index,name='index'),
+    path('', index, name='index'),
     path('about/',about,name='about'),
     path('rent-venue/',rentVenue,name='rentVenue'),
     path('shows-events/',showsEvents,name='showsEvents'),
     path('tickets/',tickets,name='tickets'),
+    
 ]
 
 # if settings.DEBUG:
