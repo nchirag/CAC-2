@@ -30,7 +30,12 @@
       $(".n1").val("");
     });
                      
-     });</script>
+     });
+     
+     function redirectToPage() {
+      window.location.href = 'http://127.0.0.1:8000/';
+  // Add your desired button click behavior here
+}</script>
   </head>
   <body>
     
@@ -42,13 +47,13 @@
         <input type="text" placeholder="Enter your Email address" class="n1"><br>
         <input type="text" placeholder="Enter your username" class="n1"><br>
         <input type="password" placeholder="Enter your password" class="n1"><br>
-        <div class="n2">Create account</div>
+        <div class="n2" onclick="redirectToPage()">Create account</div>
       </div>
       <div class="login-form">
          <input type="text" placeholder="Email or Username" class="n1"><br>
          <input type="password" placeholder="Password" class="n1"><br>
         
-        <div class="n2">Log In</div><br>
+        <div class="n2" onclick="redirectToPage()">Log In</div><br>
          <a href="#"> I forgot my username or password</a>
         
     </div>

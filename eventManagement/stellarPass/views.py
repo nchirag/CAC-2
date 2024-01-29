@@ -39,3 +39,5 @@ def wonderland(request):
 def tiger(request):
     return render(request, 'stellarPass/tigerdancehipop.html');
 
+def login(request):
+    return render(request, "stellarPass/log-sign.html");
