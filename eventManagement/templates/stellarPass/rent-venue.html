@@ -138,6 +138,7 @@
                     </div>
                     <div class="contact-form">
                         <form id="contact" action="" method="post">
+                          {% csrf_token %}
                           <div class="row">
                             <div class="col-md-6 col-sm-12">
                               <fieldset>
@@ -146,7 +147,7 @@
                             </div>
                             <div class="col-md-6 col-sm-12">
                               <fieldset>
-                                <input name="email" type="text" id="email" pattern="[^ @]@[^ @]" placeholder="Your Email*" required="">
+                                <input name="email" type="email" id="email"  placeholder="Your Email*" required="">
                               </fieldset>
                             </div>
                             <div class="col-md-6 col-sm-12">
