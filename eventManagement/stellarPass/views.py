@@ -21,6 +21,8 @@ def tickets(request):
     return render(request,'stellarPass/tickets.html');
 
 
+
+
 def havenCourtyard(request):
     return render(request,'stellarPass/havenCourtyard.html');
 
@@ -49,6 +51,10 @@ def wonderland(request):
 def tiger(request):
     return render(request, 'stellarPass/tigerdancehipop.html');
 
+
+def login(request):
+    return render(request, "stellarPass/log-sign.html");
+
 def reservation_view(request):
     if request.method == 'POST':
         form = ReservationForm(request.POST)
@@ -60,6 +66,3 @@ def reservation_view(request):
         form = ReservationForm()
 
     return render(request, 'reservation_form.html', {'form': form})
-
-
-
