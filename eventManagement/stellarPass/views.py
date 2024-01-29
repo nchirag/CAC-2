@@ -19,3 +19,12 @@ def showsEvents(request):
 def tickets(request):
     return render(request,'stellarPass/tickets.html');
 
+def NeonGrooveArena(request):
+    return render(request,'stellarPass/NeonGrooveArena.html');
+
+def rhytmicOasis(request):
+    return render(request,'stellarpass/rhytmicOasis.html');
+
+def ticketdetails(request):
+    return render(request,'stellarPass/ticket-details.html');
+

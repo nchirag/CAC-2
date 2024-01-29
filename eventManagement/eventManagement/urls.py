@@ -16,7 +16,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from stellarPass.views import index,about,rentVenue,showsEvents,tickets
+from stellarPass.views import index,about,rentVenue,showsEvents,tickets,NeonGrooveArena,rhytmicOasis,ticketdetails
 
 
 urlpatterns = [
@@ -26,6 +26,9 @@ urlpatterns = [
     path('rent-venue/',rentVenue,name='rentVenue'),
     path('shows-events/',showsEvents,name='showsEvents'),
     path('tickets/',tickets,name='tickets'),
+    path('NeonGrooveArena/',NeonGrooveArena,name = 'NeonGrooveArena'),
+    path('rhytmicOasis/',rhytmicOasis,name = 'rhytmicOasis'),
+    path('ticket-details/',ticketdetails,name='ticket-details')
     
 ]
 
