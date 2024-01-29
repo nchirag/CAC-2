@@ -25,7 +25,7 @@ urlpatterns = [
     path('about/',about,name='about'),
     path('rent-venue/',rentVenue,name='rentVenue'),
     path('shows-events/',showsEvents,name='showsEvents'),
-    path('tickets/',tickets,name='tickets'),
+c    path('tickets/',tickets,name='tickets'),
     path('havenCourtyard/',havenCourtyard,name='havenCourtyard'),
     path('tigerdancehipop/',tigerdancehipop,name='tigerdancehipop'),
     
