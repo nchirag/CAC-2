@@ -20,7 +20,6 @@ def showsEvents(request):
 def tickets(request):
     return render(request,'stellarPass/tickets.html');
 
-<<<<<<< HEAD
 def havenCourtyard(request):
     return render(request,'stellarPass/havenCourtyard.html');
 
@@ -28,7 +27,7 @@ def tigerdancehipop(request):
     return render(request,'stellarPass/tigerdancehipop.html');
 
 
-=======
+
 
 def NeonGrooveArena(request):
     return render(request,'stellarPass/NeonGrooveArena.html');
@@ -49,10 +48,10 @@ def wonderland(request):
 def tiger(request):
     return render(request, 'stellarPass/tigerdancehipop.html');
 
-<<<<<<< HEAD
+
 def login(request):
     return render(request, "stellarPass/log-sign.html");
-=======
+
 def reservation_view(request):
     if request.method == 'POST':
         form = ReservationForm(request.POST)
@@ -64,6 +63,4 @@ def reservation_view(request):
         form = ReservationForm()
 
     return render(request, 'reservation_form.html', {'form': form})
->>>>>>> origin/main
 
->>>>>>> 396490621594091933729b50ff204143330a7525
