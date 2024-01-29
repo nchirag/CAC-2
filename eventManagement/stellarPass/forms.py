@@ -1,3 +1,4 @@
+# forms.py
 from django import forms
 from .models import Reservation
 
@@ -16,5 +17,5 @@ class ReservationForm(forms.ModelForm):
             'about_event_hosting',
         ]
 
-    def _init_(self, *args, **kwargs):
-        super(ReservationForm, self)._init_(*args, **kwargs)
+    def __init__(self, *args, **kwargs): 
+        super(ReservationForm, self).__init__(*args, **kwargs)

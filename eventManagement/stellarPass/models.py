@@ -12,4 +12,4 @@ class Reservation(models.Model):
     about_event_hosting = models.TextField()
 
     def _str_(self):
-        return self.name
+        return self.name,self.email
