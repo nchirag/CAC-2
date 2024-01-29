@@ -1277,24 +1277,26 @@ About Us Page
 }
 
 .about-upcoming-shows .next-shows ul li .icon-button {
-  float: right;
-  margin-top: -35px;
+  float: right; /* Removed margin-top: -35px; */
 }
 
 .about-upcoming-shows .next-shows ul li .icon-button a {
-  width: 50px;
-  height: 50px;
-  background-color: #656c74;
-  color: #fff;
-  display: inline-block;
-  text-align: center;
-  line-height: 50px;
-  transition: all .3s;
+  width: 50px !important;
+  height: 50px !important;
+  background-color: #656c74 !important;
+  color: #fff !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  border-radius: 50% !important;
+  transition: background-color 0.3s !important;
 }
 
 .about-upcoming-shows .next-shows ul li .icon-button a:hover {
   background-color: #858b93;
+  
 }
+
 
 .also-like {
   margin-top: 110px;

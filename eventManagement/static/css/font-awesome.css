@@ -542,6 +542,8 @@
   content: "\f079";
 }
 .fa-shopping-cart:before {
+  position :absolute;
+  top : 100px;
   content: "\f07a";
 }
 .fa-folder:before {
