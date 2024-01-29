@@ -21,13 +21,17 @@ from stellarPass.views import index,about,rentVenue,showsEvents,tickets,bigwater
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('',index,name='index'),
+    path('', index, name='index'),
     path('about/',about,name='about'),
     path('rent-venue/',rentVenue,name='rentVenue'),
     path('shows-events/',showsEvents,name='showsEvents'),
     path('tickets/',tickets,name='tickets'),
+<<<<<<< HEAD
     path('bigwater/',bigwater,name='bigwater'),
     path('wonderland/',wonderland,name='wonderland'),
     path('tiger/',tiger,name='tiger'),
+=======
+    
+>>>>>>> a2969898fc546ad859f99995c9e2493aad0fe820
 ]
 

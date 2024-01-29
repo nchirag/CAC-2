@@ -19,6 +19,7 @@ def showsEvents(request):
 def tickets(request):
     return render(request,'stellarPass/tickets.html');
 
+<<<<<<< HEAD
 def bigwater(request):
     return render(request, 'stellarPass/bigwatersplash.html');
 
@@ -27,3 +28,5 @@ def wonderland(request):
 
 def tiger(request):
     return render(request, 'stellarPass/tigerdancehipop.html');
+=======
+>>>>>>> a2969898fc546ad859f99995c9e2493aad0fe820
