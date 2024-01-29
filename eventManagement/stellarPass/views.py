@@ -19,3 +19,11 @@ def showsEvents(request):
 def tickets(request):
     return render(request,'stellarPass/tickets.html');
 
+def havenCourtyard(request):
+    return render(request,'stellarPass/havenCourtyard.html');
+
+def tigerdancehipop(request):
+    return render(request,'stellarPass/tigerdancehipop.html');
+
+
+
