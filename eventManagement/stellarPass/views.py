@@ -55,14 +55,21 @@ def tiger(request):
 def login(request):
     return render(request, "stellarPass/log-sign.html");
 
+from django.shortcuts import render, redirect
+from .forms import ReservationForm
+
 def reservation_view(request):
     if request.method == 'POST':
         form = ReservationForm(request.POST)
         if form.is_valid():
             form.save()
             # Add any additional logic you need after a successful form submission
-            return redirect('success_page')  # Redirect to a success page
+            return redirect('success_page')  # Redirect to a success page or another URL
+        else:
+            # Print form validation errors for debugging
+            print(form.errors)
     else:
         form = ReservationForm()
 
-    return render(request, 'reservation_form.html', {'form': form})
+    return render(request, 'rent-venue.html', {'form': form})
+

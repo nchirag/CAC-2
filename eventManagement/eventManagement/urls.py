@@ -19,7 +19,7 @@ from django.urls import path
 
 from stellarPass.views import index,about,rentVenue,showsEvents,tickets,NeonGrooveArena,rhytmicOasis,ticketdetails,bigwater,wonderland,tigerdancehipop,havenCourtyard
 
-from stellarPass.views import index,about,rentVenue,showsEvents,tickets,NeonGrooveArena,rhytmicOasis,ticketdetails,bigwater,wonderland,tiger,login,havenCourtyard,tigerdancehipop
+from stellarPass.views import index,about,rentVenue,showsEvents,tickets,NeonGrooveArena,rhytmicOasis,ticketdetails,bigwater,wonderland,tiger,login,havenCourtyard,tigerdancehipop,reservation_view
 
 
 
@@ -49,6 +49,8 @@ urlpatterns = [
     path('tiger/',tiger,name='tiger'),
 
     path('login/',login,name='login'),
+
+    path('reservation/', reservation_view, name='reservation_view'),
 
     
 
