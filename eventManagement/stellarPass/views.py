@@ -19,8 +19,8 @@ def rentVenue(request):
 def showsEvents(request):
     return render(request,'stellarPass/shows-events.html');
 
-def tickets(request):
-    return render(request,'stellarPass/tickets.html');
+def mycart(request):
+    return render(request,'stellarPass/mycart.html');
 
 def havenCourtyard(request):
     return render(request,'stellarPass/havenCourtyard.html');

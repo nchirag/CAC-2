@@ -18,7 +18,7 @@ from django.contrib import admin
 from django.urls import path
 
 
-from stellarPass.views import index,about,rentVenue,showsEvents,tickets,NeonGrooveArena,rhytmicOasis,ticketdetails,bigwater,wonderland,tiger,havenCourtyard,signup,signin,signout
+from stellarPass.views import index,about,rentVenue,showsEvents,NeonGrooveArena,rhytmicOasis,ticketdetails,bigwater,wonderland,tiger,havenCourtyard,signup,signin,signout,mycart
 
 
 
@@ -29,7 +29,7 @@ urlpatterns = [
     path('rent-venue/',rentVenue,name='rentVenue'),
     path('shows-events/',showsEvents,name='showsEvents'),
 
-    path('tickets/',tickets,name='tickets'),
+    path('mycart/',mycart,name='mycart'),
     path('havenCourtyard/',havenCourtyard,name='havenCourtyard'),
 
     path('NeonGrooveArena/',NeonGrooveArena,name = 'NeonGrooveArena'),
