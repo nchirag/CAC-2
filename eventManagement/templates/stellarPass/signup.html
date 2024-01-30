@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign up</title>
+    <link rel="stylesheet" href="/static/css/signup.css">
+</head>
+<body>
+    <div class="container">
+        <div class="left">
+          <h1>Sign Up</h1>
+          <p>create a new account</p>
+          <form action="/signup/" method="post">
+            {% csrf_token %}
+        
+            <label for="Username">Name</label>
+            <input type="text" name="username" id="username" required>
+            
+            <label for="email">Email</label>
+            <input type="email" name="email" id="email" required>
+            
+            <label for="password">Password</label>
+            <input type="password" name="password" id="password" required>
+            
+            <label for="confirm">Confirm Password</label>
+            <input type="password" name="confirm" id="confirm" required>
+            
+            
+            <br>
+            <!-- <input class="button" type="button" value="Sign Up"> -->
+            <button type="submit" class="button">Sign Up</button>
+          </form>
+           
+        <script src="" async defer></script>
+    
+</body>
+</html>
+
