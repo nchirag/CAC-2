@@ -17,9 +17,8 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 
-from stellarPass.views import index,about,rentVenue,showsEvents,tickets,NeonGrooveArena,rhytmicOasis,ticketdetails,bigwater,wonderland,tigerdancehipop,havenCourtyard
 
-from stellarPass.views import index,about,rentVenue,showsEvents,tickets,NeonGrooveArena,rhytmicOasis,ticketdetails,bigwater,wonderland,tiger,login,havenCourtyard,tigerdancehipop
+from stellarPass.views import index,about,rentVenue,showsEvents,tickets,NeonGrooveArena,rhytmicOasis,ticketdetails,bigwater,wonderland,tiger,havenCourtyard,signup,signin,signout
 
 
 
@@ -32,13 +31,6 @@ urlpatterns = [
 
     path('tickets/',tickets,name='tickets'),
     path('havenCourtyard/',havenCourtyard,name='havenCourtyard'),
-    path('tigerdancehipop/',tigerdancehipop,name='tigerdancehipop'),
-
-    path('tickets/',tickets,name='tickets'),
-
-    path('havenCourtyard/',havenCourtyard,name='havenCourtyard'),
-    path('tigerdancehipop/',tigerdancehipop,name='tigerdancehipop'),
-
 
     path('NeonGrooveArena/',NeonGrooveArena,name = 'NeonGrooveArena'),
     path('rhytmicOasis/',rhytmicOasis,name = 'rhytmicOasis'),
@@ -48,8 +40,10 @@ urlpatterns = [
     path('wonderland/',wonderland,name='wonderland'),
     path('tiger/',tiger,name='tiger'),
 
-    path('login/',login,name='login'),
-
+    
+    path('signup/',signup,name='signup'),
+    path('signin/',signin,name='signin'),
+    path('signout/', signout, name='signout')
     
 
 ]

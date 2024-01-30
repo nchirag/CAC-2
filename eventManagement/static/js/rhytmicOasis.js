@@ -25,7 +25,7 @@ function updateTotalPrice() {
 function purchaseTickets() {
     // Add your logic for handling the purchase of tickets
     if (qtyselected > 0) {
-        alert("You have purchased ${qtyselected} ticket(s) for a total of Rs ${qtyselected * ticketPrice}.");
+        alert('You have purchased ${qtyselected} ticket(s) for a total of Rs ${qtyselected * ticketPrice}.');
     } else {
         alert("Please select at least one ticket.");
     }

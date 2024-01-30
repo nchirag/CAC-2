@@ -40,6 +40,8 @@
 <!-- * Preloader End * -->
 
 <!-- * Pre HEader * -->
+
+
 <div class="pre-header">
     <div class="container">
         <div class="row">
@@ -48,8 +50,31 @@
             </div>
             <div class="col-lg-6 col-sm-6">
                 <div class="text-button">
-                    <a href="{% url 'login' %}">Login <i class="fa fa-arrow-right"></i></a>
+
+                    {% for message in messages %}
+                    <div class="alert alert-{{ message.tags }} alert-dismissible fade show" role="alert">
+                    <strong>Message:</strong> {{ message }}
+                    <button type="button" class="close" data-dismiss = "alert" aria-label="close">
+                    <span aria-hidden="true">&times;</span>
+                    </button>
+                    </div> 
+                    {% endfor %}
+                    
+                    {% if user.is_authenticated %}
+                    <h3> Hello  {{username}} </h3>
+                    <h4>Successfully logged in!!</h4>
+                    <button type="submit" id="b1"><a href="/signout">Sign Out</a></button>
+                    {% else %} 
+                    <button type="submit" id="b1"><a href="/signup">Sign Up</a></button>
+                    <button type="submit" id="b1"><a href="/signin">Sign In</a></button>
+                    {% endif %}
+
+                    <!-- <a href="{% url 'signup' %}">Sign up <i class="fa fa-arrow-right"></i></a>
+                    <a href="{% url 'signin' %}">Sign in <i class="fa fa-arrow-right"></i></a>
+                    <a href="#">Sign out <i class="fa fa-arrow-right"></i></a> -->
                 </div>
+
+            
             </div>
         </div>
     </div>
@@ -210,28 +235,12 @@
     <script src="/static/js/mixitup.js"></script>
     <script src="/static/js/accordions.js"></script>
     <script src="/static/js/owl-carousel.js"></script>
-<<<<<<< HEAD
     <script src="/static/js/havenCourtyard.js"></script>
     <script src="/static/js/tigerdancehipop.js"></script>
     
 
    
     <script src="/static/js/custom.js"></script>
-
-   
-    
-    
-  
-
-=======
-    <script src="/static/js/neonGrooveArena.js"></script>
-    
-   
-    <script src="/static/js/custom.js"></script>
->>>>>>> origin/main
-    
-    
-    
 
 {#</main>#}
 
