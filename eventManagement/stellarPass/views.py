@@ -109,5 +109,5 @@ def reservation_view(request):
     else:
         form = ReservationForm()
 
-    return render(request, 'rent-venue.html', {'form': form})
+    return render(request, 'stellarPass/rent-venue.html', {'form': form})
 
