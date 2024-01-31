@@ -3,6 +3,7 @@ from .forms import ReservationForm
 from django.contrib.auth.models import User
 from django.contrib import messages
 from django.contrib.auth import authenticate, login,logout
+from django.contrib.auth.decorators import login_required
 
 
 # Create your views here.
@@ -111,3 +112,6 @@ def reservation_view(request):
 
     return render(request, 'rent-venue.html', {'form': form})
 
+@login_required(login_url='/signup')
+def ropt(request):
+    return render(request,'stellarpass/rhytmicOasis.html')
