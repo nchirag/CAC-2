@@ -30,3 +30,13 @@ function purchaseTickets() {
         alert("Please select at least one ticket.");
     }
 }
+function purchaseTickets() {
+    if (qtyselected > 0) {
+        // Save the selected quantity to local storage
+        localStorage.setItem('cartQuantity', qtyselected);
+        // Redirect to the cart page
+        window.location.href = '/cart/';
+    } else {
+        alert("Please select at least one ticket.");
+    }
+}
