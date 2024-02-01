@@ -59,7 +59,7 @@ def signup(request):
 
         myuser.save()
 
-        messages.success(request, "Signed up successfully!!!")
+        messages.success(request, "Signed up successfully!!")
 
         return redirect('signin')
 
@@ -115,3 +115,27 @@ def reservation_view(request):
 @login_required(login_url='/signup')
 def ropt(request):
     return render(request,'stellarpass/rhytmicOasis.html')
+
+@login_required(login_url='/signup')
+def ngpt(request):
+    return render(request,'stellarpass/NeonGrooveArena.html')
+
+@login_required(login_url='/signup')
+def hcpt(request):
+    return render(request,'stellarpass/havenCourtyard.html')
+
+@login_required(login_url='/signup')
+def wpt(request):
+    return render(request,'stellarpass/wonderland.html')
+
+@login_required(login_url='/signup')
+def bwspt(request):
+    return render(request,'stellarpass/bigwatersplash.html')
+
+@login_required(login_url='/signup')
+def tdpt(request):
+    return render(request,'stellarpass/tigerdancehipop.html')
+
+@login_required(login_url='/signup')
+def sbpt(request):
+    return render(request,'stellarpass/ticket-details.html')

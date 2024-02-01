@@ -40,7 +40,7 @@
                             </ul>
                             <span><i class="fa fa-ticket"></i> Tickets Starting From Rs 1500</span>
                             <div class="main-dark-button">
-                                <a href="{% url 'ticket-details'%}">Purchase Tickets</a>
+                                <a href="{% url 'sbpt'%}">Purchase Tickets</a>
                             </div>
                         </div>
                     </div>
@@ -77,7 +77,7 @@
                                 <h5>Neon Groove Arena</h5>
                                 <span>Feburary 8th, Friday<br>05:00PM - 11:30 PM</span>
                                 <div class="icon-button">
-                                    <a href="{% url 'NeonGrooveArena' %}"></a>
+                                    <a href="{% url 'ngpt' %}"></a>
                                         <i class="fa fa-shopping-cart"></i>
                                     </a>
                                 </div>
@@ -86,7 +86,7 @@
                                 <h5>Haven Courtyard</h5>
                                 <span>Feburary 10th, Wednesday<br>04:30PM - 11:00PM</span>
                                 <div class="icon-button">
-                                    <a href="ticket-details.html">
+                                    <a href="{% url 'hcpt' %}">
                                         <i class="fa fa-shopping-cart"></i>
                                     </a>
                                 </div>
@@ -95,7 +95,7 @@
                                 <h5>Water Splash Festival</h5>
                                 <span>Feburary 12th, Monday<br>10:00 AM - 11:00 PM</span>
                                 <div class="icon-button">
-                                    <a href="{% url 'bigwater' %}">
+                                    <a href="{% url 'bwspt' %}">
                                         <i class="fa fa-shopping-cart"></i>
                                     </a>
                                 </div>
@@ -119,14 +119,14 @@
                             <a href="event-details.html"><img src="/static/images/like-01.jpg" alt=""></a>
                             <div class="icons">
                                 <ul>
-                                    <li><a href="event-details.html"><i class="fa fa-arrow-right"></i></a></li>
-                                    <li><a href="ticket-details.html"><i class="fa fa-ticket"></i></a></li>
+                                    <li><a href="shows-events.html"><i class="fa fa-arrow-right"></i></a></li>
+                                    <li><a href="mycart.html"><i class="fa fa-ticket"></i></a></li>
                                 </ul>
                             </div>
                         </div>
                         <div class="down-content">
                             <span>March 10 to 14, 2024</span>
-                            <a href="event-details.html"><h4>Wonder Land Music and Arts Festival</h4></a>
+                            <a href="{% url 'wpt' %}"><h4>Wonder Land Music and Arts Festival</h4></a>
                         </div>
                     </div>
                 </div>
@@ -143,7 +143,7 @@
                         </div>
                         <div class="down-content">
                             <span>March 21 to 23, 2024</span>
-                            <a href="event-details.html"><h4>Big Water Splashing Festival</h4></a>
+                            <a href="{% url 'bwspt' %}"><h4>Big Water Splashing Festival</h4></a>
                         </div>
                     </div>
                 </div>
@@ -160,7 +160,7 @@
                         </div>
                         <div class="down-content">
                             <span>April 01 to 04, 2024</span>
-                            <a href="event-details.html"><h4>Tiger Dance Hip Hop Festival</h4></a>
+                            <a href="{% url 'tdpt' %}"><h4>Tiger Dance Hip Hop Festival</h4></a>
                         </div>
                     </div>
                 </div>

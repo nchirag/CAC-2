@@ -46,14 +46,14 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-6 col-sm-6">
-                <span>Hey! The Show is Starting in 15 Days.</span>
+                <span style= font-style:italic;">Beyond Tickets, Beyond Venues -  Crafting Unforgettable Experiences.</span>
             </div>
             <div class="col-lg-6 col-sm-6">
                 <div class="text-button">
 
                     {% for message in messages %}
                     <div class="alert alert-{{ message.tags }} alert-dismissible fade show" role="alert">
-                    <strong>Message:</strong> {{ message }}
+                    <strong></strong> {{ message }}
                     <button type="button" class="close" data-dismiss = "alert" aria-label="close">
                     <span aria-hidden="true">&times;</span>
                     </button>
@@ -61,8 +61,8 @@
                     {% endfor %}
                     
                     {% if user.is_authenticated %}
-                    <h3> Hello  {{username}} </h3>
-                    <h4>Successfully logged in!!</h4>
+                    <span> Hello , {{username}} </span>
+                    <span>Successfully logged in!!</span>
                     <button type="submit" id="b1"><a href="/signout">Sign Out</a></button>
                     {% else %} 
                     <button type="submit" id="b1"><a href="/signup">Sign Up</a></button>
