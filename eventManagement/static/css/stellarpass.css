@@ -274,7 +274,7 @@ header
 }
 
 .header-area {
-  position: fixed;
+  position: relative;
   top: 0px;
   left: 0px;
   right: 0px;
