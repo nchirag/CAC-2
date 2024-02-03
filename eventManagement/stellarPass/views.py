@@ -4,11 +4,12 @@ from django.contrib.auth.models import User
 from django.contrib import messages
 from django.contrib.auth import authenticate, login,logout
 from django.contrib.auth.decorators import login_required
-from .models import Reservation,newsletterSubscribe,SortEvents
+from .models import Reservation
 
 
 # Create your views here.
 
+## FOR DIFFERENT PAGES
 def index(request):
     return render(request, 'stellarPass/index.html');
 
@@ -47,6 +48,8 @@ def tiger(request):
     return render(request, 'stellarPass/tigerdancehipop.html');
 
 
+## FOR SIGN UP
+
 def signup(request):
 
     if request.method == "POST":
@@ -65,6 +68,9 @@ def signup(request):
         return redirect('signin')
 
     return render(request,"stellarPass/signup.html");
+
+
+## FOR SIGN IN
 
 def signin(request):
 
@@ -90,12 +96,14 @@ def signin(request):
 
     return render(request,"stellarPass/signin.html");
 
+## FOR SIGN OUT 
+
 def signout(request):
     logout(request)
     messages.success(request, "Logged Out")
     return redirect('index')
 
-
+from .forms import ReservationForm
 
 def reservation_view(request):
     if request.method == 'POST':
@@ -113,43 +121,6 @@ def reservation_view(request):
         val.save()
         return render(request, 'stellarPass/rent-venue.html')
     return render(request, 'stellarPass/rent-venue.html')
-
-def newsletter(request):
-    if request.method == 'POST':
-        email = request.POST['email']
-
-        # Assuming you have a Reservation model with an 'email' field
-        val = newsletterSubscribe.objects.create(email=email)
-        val.save()
-        return render(request, 'stellarPass/index.html')  # Render a success page or redirect as needed
-    return render(request, 'stellarPass/index.html')  # Render the same page for GET requests
-
-from django.shortcuts import render, redirect
-from .models import SortEvents
-
-def sort_events(request):
-    if request.method == 'POST':
-        # Retrieve form data
-        selected_month = request.POST.get('month')
-        selected_location = request.POST.get('location')
-        selected_price = request.POST.get('price')
-
-        # Create and save a SortEvents object
-        value = SortEvents.objects.create(
-            selected_month=selected_month,
-            selected_location=selected_location,
-            selected_price=selected_price
-        )
-        value.save()
-        
-        
-
-        # Redirect to a page showing the sorted results or any other desired page
-        return redirect(request,'stellarPass/shows-events.html')
-
-    return render(request, 'stellarPass/shows-events.html')
-
-
 
 
 @login_required(login_url='/signup')

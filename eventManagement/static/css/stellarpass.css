@@ -815,7 +815,7 @@ Venues & Tickets
 
 .venue-item .down-content .left-content {
   width: 31%;
-  float: left;
+  float: none;
   background-color: rgba(124,131,139,0.3);
   height: 100%;
   display: inline-block;
@@ -1262,7 +1262,7 @@ About Us Page
 }
 
 .about-upcoming-shows .next-shows h4 i {
-  float: left;
+  float: none;
   display: inline-block;
   margin-right: 10px;
   height: 30px;
@@ -1770,7 +1770,7 @@ Shows Events Page
   width: 30px;
   display: inline-block;
   height: 60px;
-  float: left;
+  float: none;
 }
 .shows-events-tabs .tabs-content .event-item .right-content ul li h6 {
   font-weight: 700;
@@ -2128,7 +2128,7 @@ Ticket Details Page
  .quantity input::-webkit-outer-spin-button,
  .quantity input::-webkit-inner-spin-button {
   -webkit-appearance: none;
-  -moz-appearance: none;
+  /* -moz-appearance: none; */
   margin: 0; }
   
   .quantity.buttons_added .minus:focus,
