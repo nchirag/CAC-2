@@ -4,6 +4,7 @@ from django.contrib.auth.models import User
 from django.contrib import messages
 from django.contrib.auth import authenticate, login,logout
 from django.contrib.auth.decorators import login_required
+from .models import Reservation
 
 
 # Create your views here.
@@ -94,23 +95,25 @@ def signout(request):
     messages.success(request, "Logged Out")
     return redirect('index')
 
-from django.shortcuts import render, redirect
 from .forms import ReservationForm
 
 def reservation_view(request):
     if request.method == 'POST':
-        form = ReservationForm(request.POST)
-        if form.is_valid():
-            form.save()
-            # Add any additional logic you need after a successful form submission
-            return redirect('success_page')  # Redirect to a success page or another URL
-        else:
-            # Print form validation errors for debugging
-            print(form.errors)
-    else:
-        form = ReservationForm()
+        name = request.POST['name']
+        email = request.POST['email']
+        phone_number = request.POST['phone_number']
+        company_organization = request.POST['company_organization']
+        venue_requested = request.POST['venue_requested']
+        type_event = request.POST['type_event']
+        date_requested_first = request.POST['date_requested_first']
+        date_requested_second = request.POST['date_requested_second']
+        about_event_hosting = request.POST['about_event_hosting']
 
-    return render(request, 'stellarPass/rent-venue.html', {'form': form})
+        val = Reservation.objects.create(name=name, email=email, phone_number=phone_number, company_organization=company_organization, venue_requested=venue_requested, type_event=type_event, date_requested_first=date_requested_first, date_requested_second=date_requested_second, about_event_hosting=about_event_hosting)
+        val.save()
+        return render(request, 'stellarPass/rent-venue.html')
+    return render(request, 'stellarPass/rent-venue.html')
+
 
 @login_required(login_url='/signup')
 def ropt(request):

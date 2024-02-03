@@ -140,7 +140,7 @@
                   <h4>Reservation Application</h4>
               </div>
               <div class="contact-form">
-                  <form id="contact" method="post" action="{% url 'reservation_view' %}">
+                  <form id="contact" method="POST" action="{% url 'reservation_view' %}">
                       {% csrf_token %}
                       <div class="row">
                           <div class="col-md-6 col-sm-12">
