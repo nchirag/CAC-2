@@ -4,10 +4,11 @@ from django.contrib.auth.models import User
 from django.contrib import messages
 from django.contrib.auth import authenticate, login,logout
 from django.contrib.auth.decorators import login_required
-
+from .models import Reservation,Event,Ticket,Cart
 
 # Create your views here.
 
+## FOR DIFFERENT PAGES
 def index(request):
     return render(request, 'stellarPass/index.html');
 
@@ -46,6 +47,8 @@ def tiger(request):
     return render(request, 'stellarPass/tigerdancehipop.html');
 
 
+## FOR SIGN UP
+
 def signup(request):
 
     if request.method == "POST":
@@ -64,6 +67,9 @@ def signup(request):
         return redirect('signin')
 
     return render(request,"stellarPass/signup.html");
+
+
+## FOR SIGN IN
 
 def signin(request):
 
@@ -89,6 +95,8 @@ def signin(request):
 
     return render(request,"stellarPass/signin.html");
 
+## FOR SIGN OUT 
+
 def signout(request):
     logout(request)
     messages.success(request, "Logged Out")
@@ -97,7 +105,12 @@ def signout(request):
 from django.shortcuts import render, redirect
 from .forms import ReservationForm
 
-def reservation_view(request):
+
+## FOR TABLES:
+
+# reservation table- 
+
+def Reservation(request):
     if request.method == 'POST':
         form = ReservationForm(request.POST)
         if form.is_valid():
@@ -111,6 +124,37 @@ def reservation_view(request):
         form = ReservationForm()
 
     return render(request, 'stellarPass/rent-venue.html', {'form': form})
+
+# event table
+
+def event_list(request):
+    events = Event.objects.all()
+    return render(request, 'stellarPass/show-events.html', {'events': events})
+
+def event_detail(request, event_id):
+    event = Event.objects.get(pk=event_id)
+    return render(request, 'stellarPass/shows-events.html', {'event': event})
+
+# ticket table
+
+def ticket_list(request):
+    tickets = Ticket.objects.all()
+    return render(request, 'stellarPass/mycart.html', {'tickets': tickets})
+
+def purchase_ticket(request, event_id):
+    # Assume you have logic to create a ticket and associate it with the current user
+    # Adjust this based on your application's requirements
+    ticket = Ticket.objects.create(event_id=event_id, user=request.user, price=10.0)
+    return render(request, 'stellarPass/mycart.html', {'ticket': ticket})
+
+# cart table
+
+def view_cart(request):
+    cart = Cart.objects.get(user=request.user)
+    return render(request, 'stellarPass/mycart.html', {'cart': cart})
+
+
+## FOR ACCESS:
 
 @login_required(login_url='/signup')
 def ropt(request):

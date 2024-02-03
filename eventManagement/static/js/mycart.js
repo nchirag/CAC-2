@@ -22,7 +22,19 @@ const product = [
         image: '/static/images/event-02.jpg',
         title: 'WonderLand Music & Art Festival',
         price: 1599,
-    }
+    },
+    {
+        id: 4,
+        image: '/static/images/ticket-05.jpg',
+        title: 'Big Water Splashing Festival',
+        price: 1500,
+    },
+    {
+        id: 5,
+        image: '/static/images/ticket-06.jpg',
+        title: 'Tiger Dance Hip Hop Festival',
+        price: 1799,
+    },
 
 ];
 const categories = [...new Set(product.map((item)=>
