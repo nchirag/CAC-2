@@ -4,7 +4,7 @@ from django.contrib.auth.models import User
 from django.contrib import messages
 from django.contrib.auth import authenticate, login,logout
 from django.contrib.auth.decorators import login_required
-
+from .models import Reservation,Event,Ticket,Cart
 
 # Create your views here.
 
@@ -108,7 +108,7 @@ def signout(request):
 
 # reservation table- 
 
-def Reservation(request):
+def reservation_view(request):
     if request.method == 'POST':
         name = request.POST['name']
         email = request.POST['email']
