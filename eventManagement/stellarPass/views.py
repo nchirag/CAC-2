@@ -103,7 +103,6 @@ def signout(request):
     messages.success(request, "Logged Out")
     return redirect('index')
 
-from .forms import ReservationForm
 
 def reservation_view(request):
     if request.method == 'POST':
