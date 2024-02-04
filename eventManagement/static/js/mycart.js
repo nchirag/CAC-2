@@ -2,7 +2,7 @@ const product = [
     {
         id: 0,
         image: '/static/images/ticket-01.jpg',
-        title: 'Rhytmic Oasis',
+        title: 'Rhythmic Oasis',
         price: 1699,
     },
     {
@@ -35,63 +35,111 @@ const product = [
         title: 'Tiger Dance Hip Hop Festival',
         price: 1799,
     },
-
 ];
-const categories = [...new Set(product.map((item)=>
-    {return item}))]
-    let i=0;
-document.getElementById('root').innerHTML = categories.map((item)=>
-{
-    var {image, title, price} = item;
-    return(
+
+const categories = product;
+
+let i = 0;
+document.getElementById('root').innerHTML = categories.map((item) => {
+    var { image, title, price } = item;
+    return (
         `<div class='box'>
             <div class='img-box'>
                 <img class='images' src=${image}></img>
             </div>
-        <div class='bottom'>
-        <p>${title}</p>
-        <h2>$ ${price}.00</h2>`+
-        "<button onclick='addtocart("+(i++)+")'>Add to cart</button>"+
-        `</div>
+            <div class='bottom'>
+                <p>${title}</p>
+                <h2>$ ${price}.00</h2>` +
+                "<button onclick='addtocart(" + (i++) + ")'>Add to cart</button>" +
+                `</div>
         </div>`
-    )
-}).join('')
+    );
+}).join('');
 
-var cart =[];
+var cart = [];
 
-function addtocart(a){
-    cart.push({...categories[a]});
+function addtocart(a) {
+    cart.push({ ...categories[a], id: cart.length + 1 });
     displaycart();
 }
-function delElement(a){
+
+function delElement(a) {
     cart.splice(a, 1);
     displaycart();
 }
 
-function displaycart(){
-    let j = 0, total=0;
-    document.getElementById("count").innerHTML=cart.length;
-    if(cart.length==0){
+function displaycart() {
+    document.getElementById("count").innerHTML = cart.length;
+    if (cart.length === 0) {
         document.getElementById('cartItem').innerHTML = "Your cart is empty";
-        document.getElementById("total").innerHTML = "$ "+0+".00";
-    }
-    else{
-        document.getElementById("cartItem").innerHTML = cart.map((items)=>
-        {
-            var {image, title, price} = items;
-            total=total+price;
-            document.getElementById("total").innerHTML = "$ "+total+".00";
-            return(
+        document.getElementById("totalMain").innerHTML = "$ 0.00";
+        document.getElementById("totalSummary").innerHTML = "$ 0.00";
+    } else {
+        const cartItemsHTML = cart.map((item) => {
+            const { image, title, price, id } = item;
+            return (
                 `<div class='cart-item'>
+                    <div class='row-img'>
+                        <img class='rowimg' src=${image}>
+                    </div>
+                    <p style='font-size:12px;'>${title}</p>
+                    <h2 style='font-size: 15px;'>$ ${price}.00</h2>
+                    <i class='fa-solid fa-trash' onclick='delElement(${cart.indexOf(item)})'></i>
+                </div>`
+            );
+        }).join('');
+
+        // Update Cart Items
+        document.getElementById("cartItem").innerHTML = cartItemsHTML;
+
+        // Update Order Summary
+        const total = cart.reduce((acc, item) => acc + item.price, 0).toFixed(2);
+        document.getElementById("quantity").innerHTML = cart.length;
+        document.getElementById("totalMain").innerHTML = `$ ${total}`;
+        document.getElementById("totalSummary").innerHTML = `$ ${total}`;
+    }
+}
+
+function generatePDF() {
+    let total = cart.reduce((acc, item) => acc + item.price, 0); // Calculate total amount
+
+    const htmlContent = `
+    <div class="pdf-content">
+        <h2>Order Summary</h2>
+        ${cart.map((item) => {
+            const { image, title, price } = item;
+            return `
+            <div class='cart-item'>
                 <div class='row-img'>
                     <img class='rowimg' src=${image}>
                 </div>
                 <p style='font-size:12px;'>${title}</p>
-                <h2 style='font-size: 15px;'>$ ${price}.00</h2>`+
-                "<i class='fa-solid fa-trash' onclick='delElement("+ (j++) +")'></i></div>"
-            );
-        }).join('');
-    }
+                <h2 style='font-size: 15px;'>$ ${price}.00</h2>
+            </div>`;
+        }).join('')}
+        <div class='summary-item'>
+            <p>Total Tickets:</p>
+            <p>${cart.length}</p>
+        </div>
+        <div class='summary-item'>
+            <p>Total Amount:</p>
+            <p>$ ${total.toFixed(2)}</p>
+        </div>
+    </div>`;
 
-    
+    const element = document.createElement('div');
+    element.innerHTML = htmlContent;
+
+    html2pdf(element, {
+        margin: 10,
+        filename: 'event_tickets.pdf',
+        image: { type: 'jpeg', quality: 0.98 },
+        html2canvas: { scale: 2 },
+        jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' },
+    });
+}
+
+function checkout() {
+    generatePDF();
+    // Additional checkout logic if needed
 }

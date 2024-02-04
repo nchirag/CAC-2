@@ -1,25 +1,57 @@
+
+{% load static %}
+
+{% block content %}
+
 <!DOCTYPE html>
-<html>
-    <head>
-        <link rel="stylesheet" href="/static/css/mycart.css">
-        <script src="https://kit.fontawesome.com/92d70a2fd8.js" crossorigin="anonymous"></script>
-    </head>
-    <body>
-        <div class="header">
-            <p class="logo">StellarPass</p>
-            <div class="cart"><i class="fa-solid fa-cart-shopping"></i><p id="count">0</p></div>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/css/mycart.css">
+    <script src="https://kit.fontawesome.com/92d70a2fd8.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/html2pdf.js@0.10.1/dist/html2pdf.bundle.js"></script>
+</head>
+
+<body>
+    <div class="header">
+        <p class="logo">StellarPass</p>
+        <div class="cart">
+            <i class="fa-solid fa-cart-shopping"></i>
+            <p id="count">0</p>
         </div>
-        <div class="container">
-            <div id="root"></div>
-            <div class="sidebar">
-                <div class="head"><p>My Cart</p></div>
-                <div id="cartItem">Your cart is empty</div>
-                <div class="foot">
-                    <h3>Total</h3>
-                    <h2 id="total">$ 0.00</h2>
+    </div>
+    <div class="container">
+        <div id="root">
+
+        </div>
+        <div class="sidebar">
+            <div class="head">
+                <p>My Cart</p>
+            </div>
+            <div id="cartItem">Your cart is empty</div>
+            <div class="foot">
+                <h3>Total</h3>
+                <h2 id="totalMain">$ 0.00</h2>
+            </div>
+            <div class="payment-summary">
+                <h3>Order Summary</h3>
+                <div class="summary-item">
+                    <p>Tickets Added:</p>
+                    <p id="quantity">0</p>
                 </div>
+                <div class="summary-item">
+                    <p>Total Amount:</p>
+                    <p id="totalSummary">$ 0.00</p>
+                </div>
+                <button onclick="checkout()">Checkout</button>
             </div>
         </div>
-        <script src="/static/js/mycart.js"></script>
-    </body>
+    </div>
+    <script src="/static/js/mycart.js"></script>
+</body>
+
 </html>
+
+{% endblock content %}

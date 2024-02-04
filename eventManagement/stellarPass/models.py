@@ -18,3 +18,13 @@ class Reservation(models.Model):
 
     def _str_(self):
         return self.name,self.email
+
+
+## NEWSLETTER TABLE  
+class NewsletterSubscription(models.Model):
+    email = models.EmailField(unique=True)
+
+    def _str_(self):
+        return self.email
+    
+

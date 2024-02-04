@@ -126,6 +126,8 @@
                         </div>
                         <div class="col-lg-3">
                             <fieldset>
+                                {% csrf_token %}
+                                {{ form.as_p }}
                                 <button type="submit" id="form-submit" class="main-dark-button">Submit</button>
                             </fieldset>
                         </div>

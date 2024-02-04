@@ -4,7 +4,7 @@ from django.contrib.auth.models import User
 from django.contrib import messages
 from django.contrib.auth import authenticate, login,logout
 from django.contrib.auth.decorators import login_required
-from .models import Reservation
+from .models import Reservation,NewsletterSubscription
 
 
 # Create your views here.
@@ -103,6 +103,7 @@ def signout(request):
     messages.success(request, "Logged Out")
     return redirect('index')
 
+# RESERVATION
 
 def reservation_view(request):
     if request.method == 'POST':
@@ -121,6 +122,22 @@ def reservation_view(request):
         return render(request, 'stellarPass/rent-venue.html')
     return render(request, 'stellarPass/rent-venue.html')
 
+# NEWSLETTER
+
+def newsletter(request):
+    if request.method == 'POST':
+        email = request.POST['email']
+
+        val1 = NewsletterSubscription.objects.create(email=email)
+        val1.save()
+        return render(request,'stellarPass/index.html')
+        
+
+    # return render(request, 'stellarpass/')
+    return render(request, 'stellarpass/templates/stellarPass', {'stellarPass/index.html': index})
+
+
+## CONNECTING PAGES
 
 @login_required(login_url='/signup')
 def ropt(request):
