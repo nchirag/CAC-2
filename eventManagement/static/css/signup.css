@@ -9,7 +9,7 @@
 }
 
 body {
-  height: 100vh;
+  /* height: 100vh; */
   background-image: linear-gradient(130deg, #fefefe, #ededed);
   display: flex;
   justify-content: center;
@@ -50,12 +50,12 @@ form {
 }
 
 .accept input {
-  width: 15px;
-  margin-right: 10px;
+  /* width: 15px; */
+  /* margin-right: 10px; */
 }
 
 img {
-  height: 500px;
+  /* height: 500px; */
   padding: 40px 60px;
 }
 
