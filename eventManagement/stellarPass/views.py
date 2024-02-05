@@ -16,6 +16,9 @@ def index(request):
 def about(request):
     return render(request, 'stellarPass/about.html');
 
+def dashboard(request):
+    return render(request,'stellarPass/dashboard.html');
+
 def rentVenue(request):
     return render(request,'stellarPass/rent-venue.html');
 
