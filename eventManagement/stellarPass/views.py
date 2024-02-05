@@ -19,6 +19,9 @@ def about(request):
 def dashboard(request):
     return render(request,'stellarPass/dashboard.html');
 
+def addash(request):
+    return render(request,'stellarPass/addash.html');
+
 def rentVenue(request):
     return render(request,'stellarPass/rent-venue.html');
 
@@ -169,3 +172,7 @@ def tdpt(request):
 @login_required(login_url='/signup')
 def sbpt(request):
     return render(request,'stellarpass/ticket-details.html')
+
+@login_required(login_url='/signup')
+def ad(request):
+    return render(request,'stellarpass/addash.html')

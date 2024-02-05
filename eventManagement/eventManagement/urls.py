@@ -19,7 +19,7 @@ from django.urls import path
 
 
 from stellarPass.views import index,about,rentVenue,showsEvents,NeonGrooveArena,rhytmicOasis,ticketdetails,bigwater,wonderland,tiger,havenCourtyard,reservation_view,signup,signin,signout,mycart,newsletter
-from stellarPass.views import ropt,ngpt,hcpt,wpt,bwspt,tdpt,sbpt,dashboard
+from stellarPass.views import ropt,ngpt,hcpt,wpt,bwspt,tdpt,sbpt,dashboard,addash,ad
 
 
 
@@ -28,6 +28,7 @@ urlpatterns = [
     path('', index, name='index'),
     path('about/',about,name='about'),
     path('dashboard/',dashboard,name='dashboard'),
+    path('addash/',addash,name='addash'),
     path('rent-venue/',rentVenue,name='rentVenue'),
     path('shows-events/',showsEvents,name='showsEvents'),
 
@@ -59,6 +60,7 @@ urlpatterns = [
     path('bwspt/', bwspt, name='bwspt'),
     path('tdpt/', tdpt, name='tdpt'),
     path('sbpt/', sbpt, name='sbpt'),
+    path('ad/', ad, name='ad'),
 
 ]
 
