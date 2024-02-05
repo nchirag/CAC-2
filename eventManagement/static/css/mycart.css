@@ -15,14 +15,14 @@ body {
 
 .header {
     height: 80px;
-    width: 70%;
+    width: 77%;
     background-color: #605F5E;
     border-radius: 3px;
     margin: 30px 0px;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 15px;
+    padding: 30px;
 }
 
 .header .logo {
