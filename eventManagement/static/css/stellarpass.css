@@ -966,7 +966,8 @@ Subscribe
 
 .subscribe {
   background-color: #7c838b;
-  padding: 30px 0px;
+  /* padding: 30px 0px;  */
+  padding: 20px 210px;
 }
 
 .subscribe h4 {
