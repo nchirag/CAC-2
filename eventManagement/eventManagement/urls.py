@@ -18,7 +18,7 @@ from django.contrib import admin
 from django.urls import path
 
 
-from stellarPass.views import index,about,rentVenue,showsEvents,NeonGrooveArena,rhytmicOasis,ticketdetails,bigwater,wonderland,tiger,havenCourtyard,reservation_view,signup,signin,signout,mycart,newsletter
+from stellarPass.views import index,about,rentVenue,showsEvents,NeonGrooveArena,rhytmicOasis,ticketdetails,bigwater,wonderland,tiger,havenCourtyard,reservation_view,signup,signin,signout,mycart,newsletter,ticketsbought
 from stellarPass.views import ropt,ngpt,hcpt,wpt,bwspt,tdpt,sbpt,dashboard
 
 
@@ -30,6 +30,7 @@ urlpatterns = [
     path('dashboard/',dashboard,name='dashboard'),
     path('rent-venue/',rentVenue,name='rentVenue'),
     path('shows-events/',showsEvents,name='showsEvents'),
+    path('dashboard/shows-events/',showsEvents, name='showsEvents'),
 
     path('mycart/',mycart,name='mycart'),
     path('havenCourtyard/',havenCourtyard,name='havenCourtyard'),
@@ -46,6 +47,7 @@ urlpatterns = [
 
     path('reservation/', reservation_view, name='reservation_view'),
     path('newsletter/',newsletter,name='newsletter'),
+    path('ticketsbought/',ticketsbought,name='ticketsbought'),
 
     
     path('signup/',signup,name='signup'),
