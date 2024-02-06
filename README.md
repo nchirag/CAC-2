@@ -4,7 +4,8 @@
 
 StellarPass our event management Website is a comprehensive platform designed to streamline the organization and coordination of various events. Built using the Django web framework, the website offers a user-friendly interface for both event organizers and attendees, providing a seamless experience from event discovery to ticket purchase.
 
-			                                         Explore the docs> - 
+			                Explore the docs> - https://github.com/nchirag/CAC-2.git
+				 	    
 
 Table of Contents
 
@@ -94,7 +95,11 @@ In your app directory, open the urls.py file and define your URLs:
 ![Image](https://github.com/nchirag/CAC-2/blob/main/eventManagement/static/images/image8.jpeg)
 
 
-
+|CLASS|NAMES|REGISTERATION NUMBER|LINK |
+|-------------|-------------|---------------------------------------------|------------------|
+|MSC DS A|TANISHA AGARWAL|23122041|[Click Here](https://github.com/tanishaagarwal195)
+|MSC DS A|CHIRAG N|23122013|[Click Here](https://github.com/nchirag)
+|MSC DS A|R LALRINMAWII|23122027|[Click Here](https://github.com/rLalrinmawii)
 
 
 
