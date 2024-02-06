@@ -9,19 +9,19 @@ StellarPass our event management Website is a comprehensive platform designed to
 
 Table of Contents
 
-1.About the Project
-2.Getting started
-3.Home
-4.AboutUs
-5.Rent Venue
-6.Shoes and Events
-7.My Cart
-8.Dashboard
+1. About the Project
+2. Getting started
+3. Home
+4. AboutUs
+5. Rent Venue
+6. Shows and Events
+7. My Cart
+8. Dashboard
 
 
 About the project
 
-Stellar Pass Event Management Website is a online platform designed to streamline and enhance the process of organizing and managing events. This comprehensive website offers a range of features and functionalities to ensure a seamless and efficient event planning experience.
+Stellar Pass Event Management Website is an online platform designed to streamline and enhance the process of organizing and managing events. This comprehensive website offers a range of features and functionalities to ensure a seamless and efficient event planning experience.
 
 Key Features:
 
@@ -93,6 +93,34 @@ Step 8: Configure URLs
 In your app directory, open the urls.py file and define your URLs:
 
 ![Image](https://github.com/nchirag/CAC-2/blob/main/eventManagement/static/images/image8.jpeg)
+
+Home
+
+This event management website's homepage welcomes you with a vibrant upcoming event banner, potentially highlighting a large-scale event like "SunBurn Pune 2023". Below, it seamlessly blends event discovery and actionable options:
+
+AboutUs
+
+Mission: Bringing extraordinary experiences to life.
+Services: Curating a diverse range of events, including concerts, band performances, and celebrations.
+Values: Creating unforgettable moments, exceptional and seamless event experiences, transforming ideas into reality, and making every occasion a stellar celebration.
+Team: Dedicated team working tirelessly to reflect the unique essence and vision of clients.
+
+Rent Venue
+
+Step into the world of unforgettable gatherings with our diverse selection of event venues! Whether you envision a dazzling soirée under shimmering chandeliers, a vibrant celebration pulsating with music, or an intimate gathering bathed in natural light, we have the perfect space to transform your vision into reality.
+
+Shows and Events
+
+Welcome to a vibrant hub where discovery meets delight! Dive into a captivating array of shows and events, each promising an experience that lingers long after the curtain closes.
+
+My Cart
+
+This page acts as your temporary shopping haven, a snapshot of the exciting items you've chosen to explore further. Take a moment to review your selections before proceeding to checkout:
+
+
+
+
+
 
 
 |CLASS|NAMES|REGISTERATION NUMBER|LINK |
