@@ -16,7 +16,7 @@ class Reservation(models.Model):
     date_requested_second = models.DateField()
     about_event_hosting = models.TextField()
 
-    def _str_(self):
+    def __str__(self):
         return self.name,self.email
 
 
@@ -24,7 +24,7 @@ class Reservation(models.Model):
 class NewsletterSubscription(models.Model):
     email = models.EmailField(unique=True)
 
-    def _str_(self):
+    def __str__(self):
         return self.email
     
 
